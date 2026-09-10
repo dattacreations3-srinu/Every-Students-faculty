@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Every Student | Faculty</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">E</div>
+
+            <div>
+                <strong>EVERY</strong>
+                <span>STUDENT</span>
+            </div>
+        </div>
+
+        <div class="school-mini">
+            <div class="school-logo">CM</div>
+
+            <div>
+                <strong>CMR Technical Campus</strong>
+                <small>Faculty Workspace</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <p class="nav-title">MAIN</p>
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>▦</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-page="students">
+                <span>♙</span>
+                Students
+                <b>128</b>
+            </button>
+
+            <button class="nav-item" data-page="activities">
+                <span>◈</span>
+                Activities
+            </button>
+
+            <button class="nav-item" data-page="points">
+                <span>★</span>
+                Award Points
+            </button>
+
+            <p class="nav-title">STUDENT GROWTH</p>
+
+            <button class="nav-item" data-page="feedback">
+                <span>☷</span>
+                Feedback
+            </button>
+
+            <button class="nav-item" data-page="identities">
+                <span>◇</span>
+                Identities
+            </button>
+
+            <button class="nav-item" data-page="discover">
+                <span>⌕</span>
+                Discover Students
+            </button>
+
+            <p class="nav-title">SYSTEM</p>
+
+            <button class="nav-item" data-page="notifications">
+                <span>♢</span>
+                Notifications
+                <b class="notification-count">4</b>
+            </button>
+
+            <button class="nav-item" data-page="settings">
+                <span>⚙</span>
+                Settings
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+                <strong>Need help?</strong>
+                <p>Visit the Every Student support center.</p>
+                <button onclick="showToast('Support center opened')">
+                    Get Support →
+                </button>
+            </div>
+
+            <div class="user-profile">
+
+                <div class="avatar purple">PS</div>
+
+                <div class="user-info">
+                    <strong>Dr. Priya Sharma</strong>
+                    <small>CSE Faculty</small>
+                </div>
+
+                <button class="more-btn">•••</button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    <span>Faculty</span>
+                    <strong>/ Dashboard</strong>
+                </div>
+
+            </div>
+
+            <div class="top-right">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search students, activities..."
+                    >
+
+                    <kbd>Ctrl K</kbd>
+
+                </div>
+
+                <button class="icon-btn" onclick="showNotifications()">
+                    ♢
+                    <i></i>
+                </button>
+
+                <div class="top-avatar">PS</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- DASHBOARD -->
+            <section class="page active-page" id="dashboard">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">FACULTY OVERVIEW</p>
+
+                        <h1>
+                            Good morning, Priya
+                            <span>👋</span>
+                        </h1>
+
+                        <p>
+                            Help your students discover, participate and grow.
+                        </p>
+                    </div>
+
+                    <div class="heading-actions">
+                        <button class="secondary-btn"
+                                onclick="openModal('activityModal')">
+                            + Create Activity
+                        </button>
+
+                        <button class="primary-btn"
+                                onclick="openModal('pointsModal')">
+                            ★ Award Points
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- KPI -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon purple-bg">♙</span>
+                            <span class="trend positive">+8.2%</span>
+                        </div>
+
+                        <p>Students</p>
+                        <h2>128</h2>
+
+                        <small>Across your classes</small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon blue-bg">◈</span>
+                            <span class="trend positive">+12.5%</span>
+                        </div>
+
+                        <p>Active Participation</p>
+                        <h2>73%</h2>
+
+                        <div class="mini-progress">
+                            <span style="width:73%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon orange-bg">★</span>
+                            <span class="trend positive">+18%</span>
+                        </div>
+
+                        <p>Points Awarded</p>
+                        <h2>3,840</h2>
+
+                        <small>This month</small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon green-bg">◇</span>
+                            <span class="trend positive">+14</span>
+                        </div>
+
+                        <p>Student Identities</p>
+                        <h2>42</h2>
+
+                        <small>Identities unlocked</small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MAIN GRID -->
+                <div class="dashboard-grid">
+
+                    <!-- PARTICIPATION -->
+                    <div class="panel large-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Participation Overview</h3>
+                                <p>Student participation during the last 6 months</p>
+                            </div>
+
+                            <select id="chartRange">
+                                <option>Last 6 months</option>
+                                <option>Last 3 months</option>
+                                <option>This year</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="chart-y">
+                                <span>100%</span>
+                                <span>75%</span>
+                                <span>50%</span>
+                                <span>25%</span>
+                                <span>0%</span>
+                            </div>
+
+                            <div class="chart-area">
+
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+
+                                <div class="bars">
+
+                                    <div class="bar-column">
+                                        <div class="bar" style="height:48%"></div>
+                                        <small>Apr</small>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar" style="height:55%"></div>
+                                        <small>May</small>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar" style="height:62%"></div>
+                                        <small>Jun</small>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar" style="height:58%"></div>
+                                        <small>Jul</small>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar" style="height:68%"></div>
+                                        <small>Aug</small>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar active-bar" style="height:73%"></div>
+                                        <small>Sep</small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK INSIGHT -->
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>AI Insights</h3>
+                                <p>What needs your attention</p>
+                            </div>
+
+                            <span class="ai-dot">AI</span>
+                        </div>
+
+                        <div class="insight">
+
+                            <div class="insight-icon">📸</div>
+
+                            <div>
+                                <strong>Photography interest</strong>
+
+                                <p>
+                                    18 students are interested but haven't
+                                    joined an activity.
+                                </p>
+
+                                <button onclick="showToast('Photography workshop suggestion created')">
+                                    Create workshop →
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight">
+
+                            <div class="insight-icon">🎤</div>
+
+                            <div>
+                                <strong>Confidence opportunity</strong>
+
+                                <p>
+                                    7 students selected public speaking
+                                    but haven't participated yet.
+                                </p>
+
+                                <button onclick="showToast('Confidence-building activity opened')">
+                                    View students →
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight">
+
+                            <div class="insight-icon">🤝</div>
+
+                            <div>
+                                <strong>Peer motivation</strong>
+
+                                <p>
+                                    Students are more likely to join when
+                                    their friends participate.
+                                </p>
+
+                                <button onclick="showToast('Peer participation insights opened')">
+                                    Explore →
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOWER GRID -->
+                <div class="dashboard-grid lower">
+
+                    <!-- STUDENTS -->
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Students Needing Encouragement</h3>
+                                <p>Students with interest but low participation</p>
+                            </div>
+
+                            <button class="text-btn"
+                                    onclick="switchPage('students')">
+                                View all →
+                            </button>
+
+                        </div>
+
+
+                        <div class="student-list">
+
+                            <div class="student-row">
+
+                                <div class="student-main">
+
+                                    <div class="avatar pink">AR</div>
+
+                                    <div>
+                                        <strong>Arjun Reddy</strong>
+                                        <small>Technology • Robotics</small>
+                                    </div>
+
+                                </div>
+
+                                <div class="student-status">
+                                    <span class="status yellow">
+                                        Needs encouragement
+                                    </span>
+
+                                    <strong>120 pts</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="student-row">
+
+                                <div class="student-main">
+
+                                    <div class="avatar blue">SK</div>
+
+                                    <div>
+                                        <strong>Sneha Kumar</strong>
+                                        <small>Photography • Design</small>
+                                    </div>
+
+                                </div>
+
+                                <div class="student-status">
+                                    <span class="status yellow">
+                                        Interested
+                                    </span>
+
+                                    <strong>95 pts</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="student-row">
+
+                                <div class="student-main">
+
+                                    <div class="avatar green">RV</div>
+
+                                    <div>
+                                        <strong>Rahul Varma</strong>
+                                        <small>Public Speaking</small>
+                                    </div>
+
+                                </div>
+
+                                <div class="student-status">
+                                    <span class="status red">
+                                        No activity
+                                    </span>
+
+                                    <strong>80 pts</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="student-row">
+
+                                <div class="student-main">
+
+                                    <div class="avatar orange">AN</div>
+
+                                    <div>
+                                        <strong>Ananya Nair</strong>
+                                        <small>Creative Writing</small>
+                                    </div>
+
+                                </div>
+
+                                <div class="student-status">
+                                    <span class="status green">
+                                        Improving
+                                    </span>
+
+                                    <strong>215 pts</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TODAY ACTIVITIES -->
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Upcoming Activities</h3>
+                                <p>Today and tomorrow</p>
+                            </div>
+
+                            <button class="text-btn"
+                                    onclick="switchPage('activities')">
+                                View all →
+                            </button>
+
+                        </div>
+
+
+                        <div class="activity-list">
+
+                            <div class="activity-row">
+
+                                <div class="activity-icon purple-bg">
+                                    📸
+                                </div>
+
+                                <div class="activity-info">
+                                    <strong>Photography Workshop</strong>
+                                    <small>Today • 3:00 PM • Room 204</small>
+                                </div>
+
+                                <span>18</span>
+
+                            </div>
+
+
+                            <div class="activity-row">
+
+                                <div class="activity-icon blue-bg">
+                                    🤖
+                                </div>
+
+                                <div class="activity-info">
+                                    <strong>Robotics Challenge</strong>
+                                    <small>Today • 4:00 PM • Lab 2</small>
+                                </div>
+
+                                <span>24</span>
+
+                            </div>
+
+
+                            <div class="activity-row">
+
+                                <div class="activity-icon orange-bg">
+                                    🎤
+                                </div>
+
+                                <div class="activity-info">
+                                    <strong>Public Speaking</strong>
+                                    <small>Tomorrow • 11:00 AM</small>
+                                </div>
+
+                                <span>12</span>
+
+                            </div>
+
+
+                            <div class="activity-row">
+
+                                <div class="activity-icon green-bg">
+                                    ⚽
+                                </div>
+
+                                <div class="activity-info">
+                                    <strong>Football Practice</strong>
+                                    <small>Tomorrow • 4:30 PM</small>
+                                </div>
+
+                                <span>32</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT FEEDBACK -->
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Recent Faculty Feedback</h3>
+                            <p>Latest observations recorded by your team</p>
+                        </div>
+
+                        <button class="text-btn"
+                                onclick="switchPage('feedback')">
+                            View feedback →
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback-grid">
+
+                        <div class="feedback-card">
+
+                            <div class="feedback-person">
+                                <div class="avatar pink">AR</div>
+
+                                <div>
+                                    <strong>Arjun Reddy</strong>
+                                    <small>Robotics Challenge</small>
+                                </div>
+                            </div>
+
+                            <p>
+                                "Arjun showed strong problem-solving skills
+                                and actively helped his teammates."
+                            </p>
+
+                            <span>2 hours ago</span>
+
+                        </div>
+
+
+                        <div class="feedback-card">
+
+                            <div class="feedback-person">
+                                <div class="avatar blue">AN</div>
+
+                                <div>
+                                    <strong>Ananya Nair</strong>
+                                    <small>Creative Writing</small>
+                                </div>
+                            </div>
+
+                            <p>
+                                "Her confidence has improved significantly
+                                after participating in the school magazine."
+                            </p>
+
+                            <span>Yesterday</span>
+
+                        </div>
+
+
+                        <div class="feedback-card">
+
+                            <div class="feedback-person">
+                                <div class="avatar green">RK</div>
+
+                                <div>
+                                    <strong>Rahul Kumar</strong>
+                                    <small>Team Activity</small>
+                                </div>
+                            </div>
+
+                            <p>
+                                "Rahul demonstrated excellent teamwork and
+                                supported a junior student."
+                            </p>
+
+                            <span>2 days ago</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STUDENTS PAGE -->
+            <section class="page" id="students">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">STUDENT MANAGEMENT</p>
+                        <h1>Students</h1>
+                        <p>Track participation, interests and growth.</p>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="openModal('pointsModal')">
+                        ★ Award Points
+                    </button>
+
+                </div>
+
+
+                <div class="toolbar">
+
+                    <div class="search-large">
+                        ⌕
+                        <input
+                            id="studentSearch"
+                            type="text"
+                            placeholder="Search students..."
+                        >
+                    </div>
+
+                    <select id="interestFilter">
+                        <option value="all">All interests</option>
+                        <option value="technology">Technology</option>
+                        <option value="creative">Creative</option>
+                        <option value="sports">Sports</option>
+                        <option value="communication">Communication</option>
+                    </select>
+
+                    <select>
+                        <option>All participation</option>
+                        <option>Active</option>
+                        <option>Needs encouragement</option>
+                    </select>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="table-container">
+
+                        <table class="data-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Interest</th>
+                                    <th>Activities</th>
+                                    <th>Points</th>
+                                    <th>Identity</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="studentTable">
+
+                                <tr>
+                                    <td>
+                                        <div class="table-person">
+                                            <div class="avatar pink">AR</div>
+                                            <div>
+                                                <strong>Arjun Reddy</strong>
+                                                <small>Class 9-A</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Technology</td>
+                                    <td>18</td>
+                                    <td><strong>640</strong></td>
+                                    <td><span class="identity-tag">Tech Creator</span></td>
+                                    <td><span class="status green">Active</span></td>
+                                    <td>
+                                        <button class="dots"
+                                                onclick="openStudent('Arjun Reddy')">
+                                            •••
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <div class="table-person">
+                                            <div class="avatar blue">SK</div>
+                                            <div>
+                                                <strong>Sneha Kumar</strong>
+                                                <small>Class 9-A</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Creative</td>
+                                    <td>12</td>
+                                    <td><strong>420</strong></td>
+                                    <td><span class="identity-tag">Emerging Creator</span></td>
+                                    <td><span class="status green">Active</span></td>
+                                    <td>
+                                        <button class="dots"
+                                                onclick="openStudent('Sneha Kumar')">
+                                            •••
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <div class="table-person">
+                                            <div class="avatar green">RV</div>
+                                            <div>
+                                                <strong>Rahul Varma</strong>
+                                                <small>Class 9-B</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Communication</td>
+                                    <td>4</td>
+                                    <td><strong>80</strong></td>
+                                    <td><span class="identity-tag">Explorer</span></td>
+                                    <td><span class="status yellow">Needs help</span></td>
+                                    <td>
+                                        <button class="dots"
+                                                onclick="openStudent('Rahul Varma')">
+                                            •••
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <div class="table-person">
+                                            <div class="avatar orange">AN</div>
+                                            <div>
+                                                <strong>Ananya Nair</strong>
+                                                <small>Class 10-A</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Creative</td>
+                                    <td>22</td>
+                                    <td><strong>720</strong></td>
+                                    <td><span class="identity-tag">Creator</span></td>
+                                    <td><span class="status green">Active</span></td>
+                                    <td>
+                                        <button class="dots"
+                                                onclick="openStudent('Ananya Nair')">
+                                            •••
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACTIVITIES -->
+            <section class="page" id="activities">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">ACTIVITY MANAGEMENT</p>
+                        <h1>Activities</h1>
+                        <p>Create opportunities for students to discover themselves.</p>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="openModal('activityModal')">
+                        + Create Activity
+                    </button>
+
+                </div>
+
+
+                <div class="activity-cards">
+
+                    <div class="big-activity-card">
+
+                        <div class="activity-cover purple-cover">
+                            📸
+                        </div>
+
+                        <div class="big-activity-content">
+
+                            <span class="category">CREATIVE</span>
+
+                            <h3>Beginner Photography</h3>
+
+                            <p>
+                                Learn mobile photography, composition and
+                                storytelling.
+                            </p>
+
+                            <div class="activity-details">
+                                <span>📅 Today, 3:00 PM</span>
+                                <span>👥 18 students</span>
+                                <span>⭐ +15 points</span>
+                            </div>
+
+                            <button class="secondary-btn"
+                                    onclick="showToast('Photography activity opened')">
+                                Manage Activity
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="big-activity-card">
+
+                        <div class="activity-cover blue-cover">
+                            🤖
+                        </div>
+
+                        <div class="big-activity-content">
+
+                            <span class="category blue-category">TECHNOLOGY</span>
+
+                            <h3>Robotics Challenge</h3>
+
+                            <p>
+                                Build, experiment and solve a real-world problem
+                                using robotics.
+                            </p>
+
+                            <div class="activity-details">
+                                <span>📅 Today, 4:00 PM</span>
+                                <span>👥 24 students</span>
+                                <span>⭐ +25 points</span>
+                            </div>
+
+                            <button class="secondary-btn"
+                                    onclick="showToast('Robotics activity opened')">
+                                Manage Activity
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="big-activity-card">
+
+                        <div class="activity-cover orange-cover">
+                            🎤
+                        </div>
+
+                        <div class="big-activity-content">
+
+                            <span class="category orange-category">COMMUNICATION</span>
+
+                            <h3>Speak With Confidence</h3>
+
+                            <p>
+                                A beginner-friendly public speaking activity
+                                for students.
+                            </p>
+
+                            <div class="activity-details">
+                                <span>📅 Tomorrow, 11:00 AM</span>
+                                <span>👥 12 students</span>
+                                <span>⭐ +20 points</span>
+                            </div>
+
+                            <button class="secondary-btn"
+                                    onclick="showToast('Speaking activity opened')">
+                                Manage Activity
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- POINTS -->
+            <section class="page" id="points">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">RECOGNITION</p>
+                        <h1>Award Points</h1>
+                        <p>Reward participation, contribution and growth.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="points-layout">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Point Categories</h3>
+                                <p>Reward meaningful student actions.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="point-category">
+                            <span class="point-icon purple-bg">🎯</span>
+                            <div>
+                                <strong>Participation</strong>
+                                <small>Joining and completing activities</small>
+                            </div>
+                            <b>+10 to +20</b>
+                        </div>
+
+
+                        <div class="point-category">
+                            <span class="point-icon blue-bg">💡</span>
+                            <div>
+                                <strong>Creation</strong>
+                                <small>Creating projects, content or ideas</small>
+                            </div>
+                            <b>+20 to +50</b>
+                        </div>
+
+
+                        <div class="point-category">
+                            <span class="point-icon green-bg">🤝</span>
+                            <div>
+                                <strong>Contribution</strong>
+                                <small>Helping classmates and school</small>
+                            </div>
+                            <b>+15 to +30</b>
+                        </div>
+
+
+                        <div class="point-category">
+                            <span class="point-icon orange-bg">👑</span>
+                            <div>
+                                <strong>Leadership</strong>
+                                <small>Organizing or leading activities</small>
+                            </div>
+                            <b>+30 to +50</b>
+                        </div>
+
+
+                        <div class="point-category">
+                            <span class="point-icon pink-bg">🌱</span>
+                            <div>
+                                <strong>Growth</strong>
+                                <small>Improvement and consistency</small>
+                            </div>
+                            <b>+15 to +30</b>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel award-panel">
+
+                        <div class="award-icon">★</div>
+
+                        <h2>Recognize a Student</h2>
+
+                        <p>
+                            A small recognition can encourage a student
+                            to take their next step.
+                        </p>
+
+                        <button class="primary-btn"
+                                onclick="openModal('pointsModal')">
+                            Award Points
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEEDBACK -->
+            <section class="page" id="feedback">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">STUDENT DEVELOPMENT</p>
+                        <h1>Faculty Feedback</h1>
+                        <p>Turn observations into meaningful growth.</p>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="openModal('feedbackModal')">
+                        + Add Feedback
+                    </button>
+
+                </div>
+
+
+                <div class="feedback-grid large-feedback">
+
+                    <div class="feedback-card">
+                        <div class="feedback-person">
+                            <div class="avatar pink">AR</div>
+                            <div>
+                                <strong>Arjun Reddy</strong>
+                                <small>Robotics Challenge</small>
+                            </div>
+                        </div>
+
+                        <p>
+                            "Arjun showed excellent problem-solving ability
+                            and supported his teammates throughout the challenge."
+                        </p>
+
+                        <div class="feedback-footer">
+                            <span>Growth • Teamwork</span>
+                            <small>Today</small>
+                        </div>
+                    </div>
+
+
+                    <div class="feedback-card">
+                        <div class="feedback-person">
+                            <div class="avatar blue">AN</div>
+                            <div>
+                                <strong>Ananya Nair</strong>
+                                <small>School Magazine</small>
+                            </div>
+                        </div>
+
+                        <p>
+                            "Ananya has become more confident in expressing
+                            her ideas and taking responsibility."
+                        </p>
+
+                        <div class="feedback-footer">
+                            <span>Growth • Leadership</span>
+                            <small>Yesterday</small>
+                        </div>
+                    </div>
+
+
+                    <div class="feedback-card">
+                        <div class="feedback-person">
+                            <div class="avatar green">RK</div>
+                            <div>
+                                <strong>Rahul Kumar</strong>
+                                <small>Community Activity</small>
+                            </div>
+                        </div>
+
+                        <p>
+                            "Rahul actively helped younger students and showed
+                            strong empathy."
+                        </p>
+
+                        <div class="feedback-footer">
+                            <span>Contribution • Teamwork</span>
+                            <small>2 days ago</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- IDENTITIES -->
+            <section class="page" id="identities">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">STUDENT IDENTITY</p>
+                        <h1>Student Identities</h1>
+                        <p>Celebrate who students are becoming.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="identity-grid">
+
+                    <div class="identity-card purple-identity">
+                        <div class="identity-symbol">💡</div>
+                        <span>CREATOR</span>
+                        <strong>18 Students</strong>
+                        <small>Creates projects and original ideas.</small>
+                    </div>
+
+
+                    <div class="identity-card blue-identity">
+                        <div class="identity-symbol">💻</div>
+                        <span>TECH EXPLORER</span>
+                        <strong>12 Students</strong>
+                        <small>Explores technology and innovation.</small>
+                    </div>
+
+
+                    <div class="identity-card green-identity">
+                        <div class="identity-symbol">🤝</div>
+                        <span>COMMUNITY BUILDER</span>
+                        <strong>7 Students</strong>
+                        <small>Helps others and contributes.</small>
+                    </div>
+
+
+                    <div class="identity-card orange-identity">
+                        <div class="identity-symbol">👑</div>
+                        <span>EMERGING LEADER</span>
+                        <strong>5 Students</strong>
+                        <small>Takes responsibility and leads.</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DISCOVER -->
+            <section class="page" id="discover">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">POTENTIAL DISCOVERY</p>
+                        <h1>Students to Discover</h1>
+                        <p>Find students who may need a better opportunity.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="discover-banner">
+
+                    <div class="discover-icon">⌕</div>
+
+                    <div>
+                        <h2>Potential students detected</h2>
+                        <p>
+                            These students show interest, consistency or
+                            improvement but have low participation.
+                        </p>
+                    </div>
+
+                    <strong>18</strong>
+
+                </div>
+
+
+                <div class="discover-list">
+
+                    <div class="discover-card">
+
+                        <div class="avatar purple">VM</div>
+
+                        <div class="discover-info">
+                            <strong>Vivek Menon</strong>
+                            <span>Interested in Robotics</span>
+
+                            <div class="discover-progress">
+                                <span style="width:78%"></span>
+                            </div>
+
+                            <small>Interest confidence: 78%</small>
+                        </div>
+
+                        <button class="secondary-btn"
+                                onclick="showToast('Recommendation sent to Vivek')">
+                            Recommend Activity
+                        </button>
+
+                    </div>
+
+
+                    <div class="discover-card">
+
+                        <div class="avatar pink">SK</div>
+
+                        <div class="discover-info">
+                            <strong>Sneha Kumar</strong>
+                            <span>Interested in Photography</span>
+
+                            <div class="discover-progress">
+                                <span style="width:85%"></span>
+                            </div>
+
+                            <small>Interest confidence: 85%</small>
+                        </div>
+
+                        <button class="secondary-btn"
+                                onclick="showToast('Recommendation sent to Sneha')">
+                            Recommend Activity
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICATIONS -->
+            <section class="page" id="notifications">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">UPDATES</p>
+                        <h1>Notifications</h1>
+                        <p>Stay updated with your students.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="panel notification-list">
+
+                    <div class="notification-row unread">
+                        <div class="notification-symbol purple-bg">★</div>
+                        <div>
+                            <strong>Arjun earned 25 points</strong>
+                            <p>Robotics Challenge completed successfully.</p>
+                            <small>15 minutes ago</small>
+                        </div>
+                    </div>
+
+
+                    <div class="notification-row unread">
+                        <div class="notification-symbol blue-bg">◈</div>
+                        <div>
+                            <strong>New student interest detected</strong>
+                            <p>5 students selected photography this week.</p>
+                            <small>1 hour ago</small>
+                        </div>
+                    </div>
+
+
+                    <div class="notification-row">
+                        <div class="notification-symbol green-bg">✓</div>
+                        <div>
+                            <strong>Activity completed</strong>
+                            <p>Python workshop has been completed.</p>
+                            <small>Yesterday</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SETTINGS -->
+            <section class="page" id="settings">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">ACCOUNT</p>
+                        <h1>Settings</h1>
+                        <p>Manage your faculty workspace.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+                    <div class="panel">
+
+                        <h3>Profile Settings</h3>
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input value="Dr. Priya Sharma">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input value="Computer Science & Engineering">
+                        </div>
+
+                        <button class="primary-btn"
+                                onclick="showToast('Profile updated successfully')">
+                            Save Changes
+                        </button>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <h3>Notifications</h3>
+
+                        <label class="toggle-row">
+                            Student achievements
+                            <input type="checkbox" checked>
+                        </label>
+
+                        <label class="toggle-row">
+                            New activity registrations
+                            <input type="checkbox" checked>
+                        </label>
+
+                        <label class="toggle-row">
+                            Student interest alerts
+                            <input type="checkbox" checked>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- AWARD POINTS MODAL -->
+<div class="modal" id="pointsModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close"
+                onclick="closeModal('pointsModal')">
+            ×
+        </button>
+
+        <div class="modal-icon purple-bg">★</div>
+
+        <h2>Award Student Points</h2>
+
+        <p>Recognize a student's participation or growth.</p>
+
+        <div class="form-group">
+            <label>Student</label>
+
+            <select id="awardStudent">
+                <option>Arjun Reddy</option>
+                <option>Sneha Kumar</option>
+                <option>Rahul Varma</option>
+                <option>Ananya Nair</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label>Point Category</label>
+
+            <select>
+                <option>Participation</option>
+                <option>Creation</option>
+                <option>Contribution</option>
+                <option>Leadership</option>
+                <option>Growth</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label>Points</label>
+
+            <input id="awardAmount"
+                   type="number"
+                   placeholder="Example: 20">
+        </div>
+
+
+        <div class="form-group">
+            <label>Reason</label>
+
+            <textarea
+                placeholder="Explain why the student earned these points..."
+            ></textarea>
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button class="secondary-btn"
+                    onclick="closeModal('pointsModal')">
+                Cancel
+            </button>
+
+            <button class="primary-btn"
+                    onclick="awardPoints()">
+                Award Points
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ACTIVITY MODAL -->
+<div class="modal" id="activityModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close"
+                onclick="closeModal('activityModal')">
+            ×
+        </button>
+
+        <div class="modal-icon blue-bg">◈</div>
+
+        <h2>Create Activity</h2>
+
+        <p>Create a beginner-friendly opportunity for students.</p>
+
+        <div class="form-group">
+            <label>Activity Name</label>
+            <input id="activityName"
+                   placeholder="Example: Beginner Photography">
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Category</label>
+
+                <select>
+                    <option>Creative</option>
+                    <option>Technology</option>
+                    <option>Sports</option>
+                    <option>Communication</option>
+                    <option>Leadership</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Points</label>
+                <input type="number" value="15">
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date">
+            </div>
+
+            <div class="form-group">
+                <label>Time</label>
+                <input type="time">
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label>Description</label>
+
+            <textarea
+                placeholder="Describe what students will do..."
+            ></textarea>
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button class="secondary-btn"
+                    onclick="closeModal('activityModal')">
+                Cancel
+            </button>
+
+            <button class="primary-btn"
+                    onclick="createActivity()">
+                Create Activity
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FEEDBACK MODAL -->
+<div class="modal" id="feedbackModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close"
+                onclick="closeModal('feedbackModal')">
+            ×
+        </button>
+
+        <div class="modal-icon green-bg">☷</div>
+
+        <h2>Add Faculty Feedback</h2>
+
+        <div class="form-group">
+
+            <label>Student</label>
+
+            <select>
+                <option>Arjun Reddy</option>
+                <option>Sneha Kumar</option>
+                <option>Rahul Varma</option>
+                <option>Ananya Nair</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Feedback</label>
+
+            <textarea
+                placeholder="Write an observation about the student's growth..."
+            ></textarea>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="secondary-btn"
+                    onclick="closeModal('feedbackModal')">
+                Cancel
+            </button>
+
+            <button class="primary-btn"
+                    onclick="saveFeedback()">
+                Save Feedback
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STUDENT DETAIL MODAL -->
+<div class="modal" id="studentModal">
+
+    <div class="modal-box student-detail">
+
+        <button class="modal-close"
+                onclick="closeModal('studentModal')">
+            ×
+        </button>
+
+        <div class="detail-header">
+
+            <div class="avatar purple large-avatar">AR</div>
+
+            <div>
+                <h2 id="detailStudentName">Arjun Reddy</h2>
+                <p>Class 9-A • Technology Explorer</p>
+            </div>
+
+        </div>
+
+
+        <div class="detail-stats">
+
+            <div>
+                <strong>640</strong>
+                <span>Points</span>
+            </div>
+
+            <div>
+                <strong>18</strong>
+                <span>Activities</span>
+            </div>
+
+            <div>
+                <strong>6</strong>
+                <span>Projects</span>
+            </div>
+
+            <div>
+                <strong>9</strong>
+                <span>Badges</span>
+            </div>
+
+        </div>
+
+
+        <h3>Interests</h3>
+
+        <div class="tag-list">
+            <span>Robotics</span>
+            <span>Coding</span>
+            <span>Innovation</span>
+            <span>Design</span>
+        </div>
+
+        <br>
+
+        <h3>Latest Growth</h3>
+
+        <p class="detail-text">
+            Student is showing strong interest in technology and has
+            recently improved teamwork and presentation confidence.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p id="toastMessage">Action completed successfully.</p>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
